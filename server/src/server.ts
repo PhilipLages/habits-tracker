@@ -4,8 +4,4 @@ const app = Fastify();
 
 const port = 3333;
 
-app.get('/', () => {
-  return `Server running on port ${ port }`
-});
-
-app.listen({ port });
+app.listen({ port }, () => console.log(`Server is running on PORT ${ port }`));
