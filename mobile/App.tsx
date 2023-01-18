@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontFamily: 'inter_800ExtraBold',
-    color: '#FFF'
+    color: '#FFF',
+    fontFamily: 'Inter_800ExtraBold'
   }
 });
