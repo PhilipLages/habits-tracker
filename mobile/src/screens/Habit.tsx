@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import RouteParams from "../components/interfaces/routeParams";
 import { BackButton } from "../components/BackButton";
 import { ProgressBar } from "../components/ProgressBar";
+import { Checkbox } from "../components/Checkbox";
 
 export function Habit() {
   const route = useRoute();
@@ -31,6 +32,13 @@ export function Habit() {
         </Text>
 
         <ProgressBar progress={20}/>
+
+        <View className="mt-6">
+            <Checkbox 
+              title="Beber 2L de água"
+              checked={false}
+            />
+        </View>
       </ScrollView>
     </View>
   )
