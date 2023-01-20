@@ -8,7 +8,6 @@ import { Check } from 'phosphor-react';
 export function HabitDay({ amount, completed }: HabitDayProps) {
   const completedPercentage = Math.round((completed / amount) * 100);
 
-
   return (
     <Popover.Root>
       <Popover.Trigger 
