@@ -1,20 +1,18 @@
+import { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import { api } from "../lib/axios";
 import { amountOfDaysToFill, summaryDates } from "../utils/datesUtils";
 import { weekDaysFirstLetter } from "../utils/weekDays";
 import { HabitDay } from "./HabitDay";
+import { SummaryTypes } from "./interfaces/SummaryTypes";
 
 export function SummaryTable() {
-  const [summary, setSummary] = useState([]);
+  const [summary, setSummary] = useState<SummaryTypes>([]);
 
   useEffect(() => {
-    const getSummary = async () => {
-      const data = api.get('summary');
-
+    api.get('summary').then(({ data }) => {
       setSummary(data);
-    }
-
-    getSummary();
+    });
   }, []);
 
   return (
