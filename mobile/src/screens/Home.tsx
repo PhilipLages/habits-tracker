@@ -3,11 +3,8 @@ import { useNavigation } from "@react-navigation/native";
 import { generateRangeDatesFromYearStart } from '../utils/generate-range-between-dates';
 import { daySize, HabitDay } from "../components/HabitDay";
 import { Header } from "../components/Header";
-
-const weekDays = [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-const datesFromYearBeginning = generateRangeDatesFromYearStart();
-const minimumSummaryDatesSize = 18 * 5;
-const amountOfDaysToFill = minimumSummaryDatesSize - datesFromYearBeginning.length;
+import { weekDays } from "../utils/weekDays";
+import { amountOfDaysToFill, datesFromYearBeginning } from "../utils/datesUtils";
 
 export function Home() {
   const { navigate } = useNavigation();
