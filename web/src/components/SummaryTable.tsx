@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
+import { api } from "../lib/axios";
 import { amountOfDaysToFill, summaryDates } from "../utils/datesUtils";
 import { weekDaysFirstLetter } from "../utils/weekDays";
 import { HabitDay } from "./HabitDay";
 
 export function SummaryTable() {
+  const [summary, setSummary] = useState([]);
+
+  useEffect(() => {
+    const getSummary = async () => {
+      const data = api.get('summary');
+
+      setSummary(data);
+    }
+
+    getSummary();
+  }, []);
+
   return (
     <div className="w-full flex">
       <div className="grid grid-rows-7 grid-flow-row gap-3">
