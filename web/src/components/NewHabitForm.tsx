@@ -1,15 +1,6 @@
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { Check } from 'phosphor-react';
-
-const availableWeekDays = [
-  'Domingo', 
-  'Segunda-feira', 
-  'Terça-feira', 
-  'Quarta-feira',
-  'Quinta-feira',
-  'Sexta-feira',
-  'Sábado'
-];
+import { availableWeekDaysFull } from '../utils/weekDays';
 
 export function NewHabitForm() {
   return (
@@ -32,7 +23,7 @@ export function NewHabitForm() {
 
       <div className='flex flex-col gap-2 mt-3'>
         {
-           availableWeekDays.map(weekDay => (
+           availableWeekDaysFull.map(weekDay => (
               <Checkbox.Root
               key={weekDay}
                 className='flex items-center gap-3 group'
