@@ -9,4 +9,7 @@ app.register(appRoutes);
 
 const port = 3333;
 
-app.listen({ port }, () => console.log(`Server is running on PORT ${ port }`));
+app.listen({ 
+  port, 
+  host: '0.0.0.0',
+ }, () => console.log(`Server is running on PORT ${ port }`));
