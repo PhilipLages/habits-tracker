@@ -6,7 +6,7 @@ import { api } from "../lib/axios";
 import HabitsInfoProps from "./interfaces/HabitsInfoProps";
 import HabitsListProps from "./interfaces/HabitsListProps";
 
-export function HabitsList({ date }: HabitsListProps) {
+export function HabitsList({ date, handleCheckChanges }: HabitsListProps) {
   const [habitsInfo, setHabitsInfo] = useState<HabitsInfoProps>();
 
   useEffect(() => {
@@ -35,7 +35,9 @@ export function HabitsList({ date }: HabitsListProps) {
     setHabitsInfo({
       possibleHabits: habitsInfo!.possibleHabits,
       completedHabits,
-    })
+    });
+
+    handleCheckChanges(completedHabits.length);
   };
 
   const isDatePassed = dayjs(date).endOf('day').isBefore(new Date());
