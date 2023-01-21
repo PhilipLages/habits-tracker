@@ -1,7 +1,21 @@
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { Check } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { api } from "../lib/axios";
+import HabitsInfoProps from "./interfaces/HabitsInfoProps";
+import HabitsListProps from "./interfaces/HabitsListProps";
 
-export function HabitsList() {
+export function HabitsList({ date }: HabitsListProps) {
+  const [habitsInfo, setHabitsInfo] = useState<HabitsInfoProps>();
+
+  useEffect(() => {
+    api.get('day', {
+      params: {
+        date: date.toISOString(),
+      }
+    }).then(({ data  }) => data)
+  }, [])
+
   return (
     <div className='mt-6 flex flex-col gap-3'>
       <Checkbox.Root
