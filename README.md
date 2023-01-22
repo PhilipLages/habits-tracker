@@ -1,7 +1,7 @@
 
 # Habits Tracker
 
-This project was developed during RocketSeat's NLW event. A Full-Stack application, containing database, API, web and mobile version.
+This project was developed during [RocketSeat's](https://www.rocketseat.com.br/) NLW event. A Full-Stack application, containing database, API, web and mobile version.
 
 
 
