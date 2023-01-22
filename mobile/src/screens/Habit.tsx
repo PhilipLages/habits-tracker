@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { api } from "../lib/axios";
 import DayInfoProps from "../components/interfaces/dayInfoProps";
+import { generateProgressPercentage } from "../lib/generate-progress-percentage";
 
 export function Habit() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +46,11 @@ export function Habit() {
     } else {
       setCompletedHabits(prevState => [...prevState, habitId]);
     }
-  } ;
+  };
+
+  const habitsProgress = dayInfo?.possibleHabits.length 
+    ? generateProgressPercentage(dayInfo.possibleHabits.length, completedHabits.length)
+    : 0;
 
   useEffect(() => {
     fetchHabits();
@@ -73,7 +78,7 @@ export function Habit() {
           { dayAndMonth }
         </Text>
 
-        <ProgressBar progress={20}/>
+        <ProgressBar progress={ habitsProgress }/>
 
         <View className="mt-6">
           { dayInfo?.possibleHabits && 
