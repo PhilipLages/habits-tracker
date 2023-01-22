@@ -1,13 +1,15 @@
+import { useCallback, useState } from "react";
 import { Text, View, ScrollView, Alert } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import dayjs from "dayjs";
+
+import Loading from "../components/Loading";
 import { daySize, HabitDay } from "../components/HabitDay";
 import { Header } from "../components/Header";
 import { weekDays } from "../utils/weekDays";
+
 import { amountOfDaysToFill, datesFromYearBeginning } from "../utils/datesUtils";
 import { api } from "../lib/axios";
-import { useEffect, useState } from "react";
-import Loading from "../components/Loading";
-import dayjs from "dayjs";
 import { SummaryTypes } from "../components/interfaces/summaryType";
 
 export function Home() {
@@ -29,9 +31,9 @@ export function Home() {
     }
   }
 
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
     fetchData();
-  }, []);
+  }, []));
 
   if (isLoading) {
     return (
