@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Feather } from '@expo/vector-icons';
+import colors from "tailwindcss/colors";
+
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
-import colors from "tailwindcss/colors";
+
 import { availableWeekDays } from "../utils/weekDays";
 import { api } from "../lib/axios";
 
