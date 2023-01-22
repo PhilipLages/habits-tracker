@@ -21,7 +21,7 @@ This project was developed during [RocketSeat's](https://www.rocketseat.com.br/)
 
 ## Tech Stack
 
-**Web:** React, TypeScript, CSS3, Tailwindcss, Radix, Axios, clsx;
+**Web:** React, TypeScript, CSS3, Tailwindcss, Radix-ui, Axios, clsx;
 
 **Mobile:** React-Native, TypeScript, CSS3, Tailwindcss, Expo, React-Native-Reanimated;
 
