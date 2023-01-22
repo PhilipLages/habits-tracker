@@ -6,8 +6,8 @@ import dayjs from "dayjs";
 import Loading from "../components/Loading";
 import { daySize, HabitDay } from "../components/HabitDay";
 import { Header } from "../components/Header";
-import { weekDays } from "../utils/weekDays";
 
+import { weekDays } from "../utils/weekDays";
 import { amountOfDaysToFill, datesFromYearBeginning } from "../utils/datesUtils";
 import { api } from "../lib/axios";
 import { SummaryTypes } from "../components/interfaces/summaryType";
